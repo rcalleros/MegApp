@@ -1,0 +1,64 @@
+{
+  "settings": {
+    "react": {
+      "pragma": "React", // Pragma to use, default to "React"
+      "version": "detect" // React version. "detect" automatically picks the version you have installed.
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier", "eslint-config-sinon"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier", "jest"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "import/no-unresolved": ["off"],
+    "import/extensions": ["off"],
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx", ".tsx"]}],
+    "no-unused-vars": ["warn"],
+    "@typescript-eslint/no-unused-vars": [
+      2,
+      {
+        "args": "none"
+      }
+    ],
+    "react/display-name": ["off", {"ignoreTranspilerName": true}],
+    "no-var": ["error"],
+    "quotes": ["error", "single"],
+    "comma-dangle": ["error", "always-multiline"],
+    "linebreak-style": ["off"],
+    "semi": ["error", "always"],
+    "no-console": ["warn"],
+    "no-nested-ternary": ["off"],
+    "max-len": ["error", {"code": 250}],
+    "new-cap": ["off"],
+    "complexity": ["off"],
+    "consistent-return": ["off"],
+    "no-useless-catch": ["off"],
+    "max-nested-callbacks": ["off"],
+    "no-use-before-define": ["warn"],
+    "no-dupe-keys": ["warn"],
+    "jsdoc/require-jsdoc": ["off"],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "@typescript-eslint/camelcase": "off",
+    "camelcase": "off"
+  }
+}
