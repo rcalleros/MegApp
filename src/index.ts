@@ -6,6 +6,9 @@ import {UserRoutes} from './routes/UserRoutes';
 dotenv.config();
 const app = express();
 const PORT = process.env.SERVER_PORT;
+
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
 // define a route handler for the User Operations
 UserRoutes(app);
 

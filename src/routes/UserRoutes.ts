@@ -1,11 +1,10 @@
-import {Application} from 'express';
-import {getUser} from '../User/User';
-export const UserRoutes = (app: Application) => {
-  app.get('/user/:id', (req, res) => {
-    if (req.params.id) {
-      const user = getUser(req.params.id);
-      res.send(user);
-      return;
-    }
-  });
+import {UserRoutesConfig} from '../User/UserRoutesConfig';
+import {IMegApplication} from '../types/IMegApplication';
+
+const Routes = UserRoutesConfig;
+
+export const UserRoutes = (app: IMegApplication) => {
+  for (let x = 0; x < Routes.length; x = x + 1) {
+    app[Routes[x].requestMethod](Routes[x].route, Routes[x].routeCallback);
+  }
 };
