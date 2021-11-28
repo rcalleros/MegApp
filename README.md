@@ -1,0 +1,2 @@
+# MegApp
+Mysql, Express, Graphql
